@@ -4,13 +4,21 @@ let oneEuroIs = {
     "USD": 1.2, // us dollar
     "GBP": 0.8, // british pound
 }
+
 // declaramos una funcion con el mismo nombre "formEuroToDollar"
 const fromEuroToDollar = function(valueInEuro){
     // convertimos el valor a dolares
-    let valueInDollar = valueInEuro * 1.2;
+    let valueInDollar = valueInEuro * oneEuroIs.USD;
     // returnamos el valor
     return valueInDollar;
 }
 
-// tenemos que incluir la funcion en el exports para que sea exportada a otros archivos como test.js
-module.exports = { fromEuroToDollar }
+/*********Conversión de DOLAR a YEN */
+const fromDollarToYen = function(valueInDollar){
+    // convert the given valueInDollar to yenes
+    let valueInYenes = 0.83 * oneEuroIs.JPY;
+    //return the yenes value
+    return valueInYenes;
+}
+
+module.exports = { fromEuroToDollar, fromDollarToYen }
